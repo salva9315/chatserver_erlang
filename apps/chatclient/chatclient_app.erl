@@ -7,7 +7,7 @@ start() ->
     start("localhost", 8080).
 
 %% Starts the chat client and connects to the specified server and port.
-start(Host, Port) ->
+start(Host, Port) -> 
     {ok, Socket} = gen_tcp:connect(Host, Port, [binary, {packet, 0}, {active, false}]),
     io:format("Connected to ~p:~p~n", [Host, Port]),
     handle_initial_message(Socket).
